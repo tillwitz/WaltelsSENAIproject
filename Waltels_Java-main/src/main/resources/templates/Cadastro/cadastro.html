@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Cadastro Waltels</title>
+</head>
+<body style="background-image: url('Cad.png'); background-size: cover; background-repeat: no-repeat; height: 96vh; width: 98.25vw;">
+    <a href="/">
+        <div style="width: 150px; height: 100px;"></div>
+    </a>
+    <form method="post" action="/cadastro" class="position-absolute top-50 start-50 translate-middle">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" style="font-weight: bold; color: gray;">Email (informe seu melhor email)</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <label for="inputPassword5" class="form-label" style="font-weight: bold; color: gray;">Senha (sua melhor senha)</label>
+        <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
+        <div class="col-md-4 offset-md-9">
+            <button type="submit" class="btn btn-primary" style="position: absolute; left: 10rem; top: 10rem;">Cadastrar</button>
+        </div>
+        <div th:if="${CadastroSucess}" class="success-message">
+            <p th:text="${CadastroSucess}"></p>
+        </div>
+    </form>
+</body>
+</html>
